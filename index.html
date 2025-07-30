@@ -1,105 +1,159 @@
-!DOCTYPE html>
-<html lang="bn">
+html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ছাত্র তথ্য তালিকা</title>
     <style>
+        /* গ্লোবাল স্টাইল */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', 'Kalpurush', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        /* কন্টেইনার */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* হেডার */
         h1 {
             text-align: center;
-            color: #333;
+            color: #1a3c34;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+
+        /* টেবিল স্টাইল */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
         }
+
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            border: 1px solid #ddd;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1em;
         }
+
         th {
-            background-color: #4CAF50;
+            background: linear-gradient(90deg, #00796b, #004d40);
             color: white;
+            text-transform: uppercase;
+            font-weight: bold;
         }
+
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f5fafa;
         }
+
         tr:hover {
-            background-color: #e0e0e0;
+            background-color: #e0f2f1;
+            transition: background-color 0.3s ease;
         }
-        @media screen and (max-width: 600px) {
+
+        /* রেসপনসিভ ডিজাইন */
+        @media screen and (max-width: 768px) {
             table {
-                font-size: 14px;
+                font-size: 0.9em;
             }
             th, td {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td {
+                font-size: 0.8em;
                 padding: 8px;
             }
+        }
+
+        /* বাংলা ফন্টের জন্য */
+        @font-face {
+            font-family: 'Kalpurush';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap');
         }
     </style>
 </head>
 <body>
-    <h1>ছাত্র তথ্য তালিকা</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>রোল</th>
-                <th>নাম</th>
-                <th>রক্তের গ্রুপ</th>
-                <th>ঠিকানা</th>
-                <th>ফোন নম্বর</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>আহমেদ রহমান</td>
-                <td>A+</td>
-                <td>ধানমন্ডি, ঢাকা</td>
-                <td>01712345678</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>সাবিনা খাতুন</td>
-                <td>B+</td>
-                <td>মিরপুর, ঢাকা</td>
-                <td>01987654321</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>কামাল হোসেন</td>
-                <td>O+</td>
-                <td>চট্টগ্রাম</td>
-                <td>01812345678</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>রিয়া সুলতানা</td>
-                <td>AB+</td>
-                <td>সিলেট</td>
-                <td>01678912345</td>
-            </tr>
-            <!-- নমুনা হিসেবে আরও ১১৬ জন ছাত্রের তথ্য যোগ করা যায়। সংক্ষেপের জন্য শুধু ৪টি দেখানো হল। -->
-            <!-- আপনি এখানে বাকি ১১৬ জন ছাত্রের তথ্য যোগ করতে পারেন। -->
-            <tr>
-                <td>5</td>
-                <td>মেহেদী হাসান</td>
-                <td>A-</td>
-                <td>রাজশাহী</td>
-                <td>01798765432</td>
-            </tr>
-            <!-- বাকি ডেটা যোগ করতে এই ফরম্যাট অনুসরণ করুন -->
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>ছাত্র তথ্য তালিকা</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>রোল</th>
+                    <th>নাম</th>
+                    <th>রক্তের গ্রুপ</th>
+                    <th>ঠিকানা</th>
+                    <th>ফোন নম্বর</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>nahian ali</td>
+                    <td>A+</td>
+                    <td>rangpur</td>
+                    <td>01712345678</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>adil ahmed</td>
+                    <td>B+</td>
+                    <td>মিরপুর, ঢাকা</td>
+                    <td>01987654321</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>fahim</td>
+                    <td>O+</td>
+                    <td>চট্টগ্রাম</td>
+                    <td>01812345678</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>raiyan sahat</td>
+                    <td>AB+</td>
+                    <td>সিলেট</td>
+                    <td>01678912345</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>mahadi jidni</td>
+                    <td>A-</td>
+                    <td>রাজশাহী</td>
+                    <td>01798765432</td>
+                </tr>
+                <!-- বাকি ১১৫ জনের তথ্য এখানে যোগ করুন -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
 
